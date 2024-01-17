@@ -20,6 +20,8 @@
             type="search"
             class="search-form-input"
             placeholder="Enter a city..."
+            required
+            id="search-form-input"
           />
           <input type="submit" class="search-form-button" value="Search" />
         </form>
@@ -27,7 +29,7 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 class="weather-app-city">Kharkiv</h1>
+            <h1 class="weather-app-city" id="city">Kharkiv</h1>
             <p class="weather-app-details">
               Tuesday 21:41, scattered clouds
               <br />
@@ -56,6 +58,6 @@
         <a href="https://meteovaleriia.netlify.app/" target="_blank">Netlify</a>
       </footer>
     </div>
-    <script src="src/index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
