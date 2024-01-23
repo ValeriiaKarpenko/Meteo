@@ -52,3 +52,16 @@ function handleSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 searchCity("Kharkiv");
+
+let forecast = document.querySelector("#forecast");
+forecast.innerHTML = `
+<div class="row">
+          <div class="col-2">
+            <div class="weather-forecats-date">Thu</div>
+            🌧️
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperatures-max"> 18°</span>
+              <span class="weather-forecast-temperatures-min">12°</span>
+            </div>
+          </div>
+        </div>`;
