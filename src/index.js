@@ -47,21 +47,29 @@ function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
 
-  searchCity(searchInput.value);
-}
-let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", handleSearchSubmit);
-searchCity("Kharkiv");
+  function displayForecast() {
+    let forecast = document.querySelector("#forecast");
 
-let forecast = document.querySelector("#forecast");
-forecast.innerHTML = `
-<div class="row">
+    let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+    days.forEach(function (day) {
+      forecast.innerHTML = `
+    <div class="row">
           <div class="col-2">
-            <div class="weather-forecats-date">Thu</div>
-            🌧️
+            <div class="weather-forecats-date">${day}</div>
+            <div class="weather-forecast-icon">🌧️</div>
             <div class="weather-forecast-temperatures">
               <span class="weather-forecast-temperatures-max"> 18°</span>
               <span class="weather-forecast-temperatures-min">12°</span>
             </div>
           </div>
         </div>`;
+    });
+  }
+
+  searchCity(searchInput.value);
+}
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
+searchCity("Kharkiv");
+
+displayForecast();
